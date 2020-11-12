@@ -25,17 +25,18 @@ namespace Client1_0
       InitializeComponent();
     }
 
-        private void Button1_Click(object sender, RoutedEventArgs e)
-        {
+    private void Button1_Click(object sender, RoutedEventArgs e)
+    {
       TextBox txtBox = new TextBox();
-        txtBox.Width = 500;
-        txtBox.Height = 20;
+      txtBox.Width = 500;
+      txtBox.Height = 20;
       txtBox.Text = Mess.Text;
       txtBox.IsEnabled = false;
       Thickness m = txtBox.Margin;
       m.Bottom = 10;
       txtBox.Margin = m;
-      MyPanel.Children.Add(txtBox);
+      if (Mess.Text != "")
+        MyPanel.Children.Add(txtBox);
       Mess.Text = "";
     }
 
@@ -51,7 +52,8 @@ namespace Client1_0
         Thickness m = txtBox.Margin;
         m.Bottom = 10;
         txtBox.Margin = m;
-        MyPanel.Children.Add(txtBox);
+        if (Mess.Text != "")
+          MyPanel.Children.Add(txtBox);
         Mess.Text = "";
       }
     }
